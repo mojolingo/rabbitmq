@@ -40,6 +40,10 @@ when "debian", "ubuntu"
     action :add
   end
 
+  execute "update-rabbitmq-repo" do
+    command "apt-get update"
+  end
+
   # installs the required setsid command -- should be there by default but just in case
   package "util-linux"
   package "rabbitmq-server"
